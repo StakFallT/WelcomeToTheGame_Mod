@@ -72,6 +72,9 @@ Additional notes:
 
 	If you have not already built the mod, then do so, and then do the above :)
 
+	If you are looking to extend or modify the code, I'd recommend downloading ILSpy; it will let
+	you examine the game's code since C# "compiles" down to MSIL (MicroSoft Intermediate Language).
+
 UPDATE:
 6/20/2021 12:30PM -- The call EnemyManager.Clear() may not be what is preventing the player
 						 from exiting the building, and the game auto-saving. It seems like, if
