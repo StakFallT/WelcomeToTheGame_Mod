@@ -41,7 +41,7 @@ Additional notes:
 
 
 UPDATE:
-	6/20/2021 12:30PM -- The call EnemyManager.Clear() may not be what is preventing the player
+6/20/2021 12:30PM -- The call EnemyManager.Clear() may not be what is preventing the player
 						 from exiting the building, and the game auto-saving. It seems like, if
 						 Clear() is rem'ed out, the player is still unable to exit the building,
 						 and interaction (fully leaving things like the computer if the player
@@ -60,15 +60,13 @@ UPDATE:
 						 For this reason, I'm leaving it as is until I can figure out
 						 a way to prevent him from spawning in the first place.
 
-						 Leveraging HitManManager.SpawnHitman (since only public members
-						 and methods can be pre-pended / post-pended to -- a limitation
-						 of Universal Unity Hooks), the line HitmanManager.DeSpawn()
-						 was added and UUH told to append any custom code to the end of
-						 the method. This, theoretically would have the effect of Lucas
-						 spawning in, and then immediately being spawned back out. However,
-						 even doing this he still spawns in. It seems the police-triggers are
-						 squashed, but I'm not sure. So far, I haven't lost to that yet.
-						 I've heard the police scanner and footsteps and immediately ran
-						 into the bathroom behind the shower curtain but I'm wondering
-						 if that is Lucas and the police scanner was more of a random
-						 ambient and unrelated to the player character.
+Leveraging HitManManager.SpawnHitman (since only public members and methods can be
+pre-pended / post-pended to -- a limitation of Universal Unity Hooks), the line
+HitmanManager.DeSpawn() was added and UUH told to append any custom code to the end of the
+method. This, theoretically would have the effect of Lucas spawning in, and then immediately
+being spawned back out. However, even doing this he still spawns in. It seems the
+police-triggers are squashed, but I'm not sure. So far, I haven't lost to that yet.
+
+I've heard the police scanner and footsteps and immediately ran into the bathroom behind the
+shower curtain but I'm wondering if that is Lucas and the police scanner was more of a random
+ambient and unrelated to the player character.
