@@ -19,8 +19,9 @@ exit the building, it also prevents money from accumulating and the game from au
 
 
 Additional notes:
+
 	To get this to build:
-		Add these references (from the game folder's WTTG2_Data\Managed):
+		Add these references (from the game's WTTG2_Data\Managed directory):
 			UnityEngine
 			UnityEngine.CoreModule
 			UnityEngine.IMGUIModule
@@ -39,6 +40,37 @@ Additional notes:
 	at some point I'd like to latch into the UI to display information about what the mod is
 	detecting (any enemy events that it's shutting down, etc.) or doing.
 
+
+	I will only give a brief explanation of how to install Universal Unity Hooks since
+	that project's page is really where one should go for more information on that -- though
+	it isn't hard.
+
+	First, (either before you build your DLL or after, either way is fine), put the files of
+	Universal Unity Hooks (UUH) in the game's root directory alongside where the WTTG2.exe is.
+	That means, do NOT create a directory just for UUH in the root directory and put UUH there, I mean
+	quite literally, place UUH's files directly in the directory with WTTG2.exe :)
+
+	Next, run UUH once from the command line (no arguments needed). This should create a directory
+	a Plugins directory under the game's root directory.
+
+	TADA, UUH is installed. Easy right? :)
+
+
+	NOTE: Before you have UUH patch / inject any game DLLs, you may want to make a backup of,
+		and there may be others -- these are just what I make a back up,
+
+		Assembly-CSharp.dll
+		Assembly-CSharp-firstpass.dll
+		Assembly-UnityScript.dll
+
+		That way if you have a feeling that something is really whacked out you can just copy over
+		those files back overtop without needing to re-validate the entire set of game files.
+
+	If you already built the mod, copy the DLL into that Plugins directory, and drop to the
+	command line and re-run UUH again. This time, UUH will pick up that there is a file in thar
+	directory and automatically do all the patching / injection necessary.
+
+	If you have not already built the mod, then do so, and then do the above :)
 
 UPDATE:
 6/20/2021 12:30PM -- The call EnemyManager.Clear() may not be what is preventing the player
